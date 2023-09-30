@@ -1,5 +1,5 @@
 
-
+'use client'
 import React from "react";
 import Link from "next/link";
 // import Table from "./table";
@@ -7,7 +7,7 @@ export default function Datatable(props) {
 
     const finalset = props.final;
     const searchval = props.search;
-
+// const nn=finalset.length;
     console.log("hiii")
 
     return (
@@ -22,11 +22,12 @@ export default function Datatable(props) {
                                 <tr>
                                     {
 
-                                        finalset.map((e, i) => {
-                                            finalset.filter(function (item, i, ar) { return ar.indexOf(item) === i; })
-                                            // console.log(e)
-                                            return <th scope="col" class=" px-6 py-4">{e[0]}</th>
-                                        })}
+                                      (finalset)?  finalset.map((e, i) => {
+                                        finalset.filter(function (item, i, ar) { return ar.indexOf(item) === i; })
+                                        // console.log(e)
+                                        return <th scope="col" class=" px-6 py-4">{e[0]}</th>
+                                    }):""
+                                      }
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,14 +35,14 @@ export default function Datatable(props) {
                                     [...Array(50)].map((k, j) => {
                                         return (
                                             <tr class="border-b dark:border-neutral-500">
-                                                {finalset.map((e, i) => {
+                                                 {(finalset)?finalset.map((e, i) => {
                                                     const kl = searchval.hourly;
                                                     console.log(e[1])
                                                     const h = e[1];
                                                     console.log(j)
 
                                                     return <td class="whitespace-nowrap  px-6 py-4 font-medium">{kl[e[1]][j]}</td>
-                                                })}
+                                                }):""}
                                             </tr>
                                         )
                                     })
