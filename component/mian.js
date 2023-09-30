@@ -216,12 +216,12 @@ lati=e.target.value
             
 
             
-
-            <button onClick={fetchapi} className="w-[90px] p-2 mt-[20px] border-solid border-gray-600 border-[2px] rounded-[6px] hover:bg-black hover:text-white ">call api</button>
             {
                 (loading) ? "Loading" : ""
 
             }
+            <button onClick={fetchapi} className="w-[90px] p-2 mt-[20px] border-solid border-gray-600 border-[2px] rounded-[6px] hover:bg-black hover:text-white ">call api</button>
+            
 
 
             {(done) ? (
