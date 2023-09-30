@@ -193,13 +193,15 @@ lati=e.target.value
     return (
         <div className="flex flex-col justify-center items-center ">
             {alert}
-            <div className="sm:mt-[40px] border-solid border-[2px] border-gray-500 sm:w-[500px] w-[300px] h-[200px] sm:h-[120px] justify-center items-center flex flex-col self-center mb-[40px]">
-                <p className="sm:text-[20px] font-semibold mb-[20px]">Enter Longitude and Latitude</p>
-                <div className="sm:flex gap-[20px]">
-                    <input type="text" onChange={(e) => {e.preventDefault(); settinglong(e) }} placeholder="Latitude" className="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-gray-500 shadow-md focus:outline-none focus:border-gray-600" />
-                    <input type="text" onChange={(e) => {e.preventDefault(); settinglat(e) }} placeholder="Longitude" className="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-gray-500 shadow-md focus:outline-none focus:border-gray-600" />
-                </div>
+          {
+            (!done)?  <div className="sm:mt-[40px] border-solid border-[2px] border-gray-500 sm:w-[500px] w-[300px] h-[200px] sm:h-[120px] justify-center items-center flex flex-col self-center mb-[40px]">
+            <p className="sm:text-[20px] font-semibold mb-[20px]">Enter Longitude and Latitude</p>
+            <div className="sm:flex gap-[20px]">
+                <input type="text" onChange={(e) => {e.preventDefault(); settinglong(e) }} placeholder="Latitude" className="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-gray-500 shadow-md focus:outline-none focus:border-gray-600" />
+                <input type="text" onChange={(e) => {e.preventDefault(); settinglat(e) }} placeholder="Longitude" className="block mb-2 bg-gray-100 p-2 rounded-lg border-2 border-gray-500 shadow-md focus:outline-none focus:border-gray-600" />
             </div>
+        </div>:""
+          }
             {
                 (!done) ? <div className="grid grid-cols-2 sm:grid-cols-6  gap-2">
                     {
